@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>The DbWrapper is the wrapper of dapper library</Description>
+    <Authors>Konrad Dąbrowski</Authors>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>Latest</LangVersion>
+    <AssemblyName>Arcaim.DbWrapper</AssemblyName>
+    <Title>Arcaim.DbWrapper</Title>
+    <PackageId>Arcaim.DbWrapper</PackageId>
+    <Company>Arcaim</Company>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+</Project>
