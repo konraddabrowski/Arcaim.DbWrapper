@@ -56,5 +56,30 @@ namespace Arcaim.DbWrapper
                 throw QueryFailedException.Create(ex.Message);
             }
         }
+
+        public async Task<IEnumerable<TResult>> QueryAsync<T1, T2, TResult>(string sql, Func<T1, T2, TResult> map, object param = null, IDbTransaction transaction = null, bool buffered = true, string splitOn = "Id", int? commandTimeout = null, CommandType? commandType = null)
+        {
+            try
+            {
+                using var sqlConnection = _dbConnectionFactory();
+
+                return await sqlConnection.QueryAsync<T1, T2, TResult>(sql, map, param, transaction, buffered, splitOn, commandTimeout, commandType);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex,
+                    @"An exception occurred while calling QueryAsync method with parameters:
+                      sql = {0}
+                      map = {1}
+                      param = {2}
+                      transaction = {3}
+                      buffered = {4}
+                      splitOn = {5},
+                      commandTimeout = {6}
+                      commandType = {7}",
+                    sql, map, param, transaction, buffered, splitOn, commandTimeout, commandType);
+                throw QueryFailedException.Create(ex.Message);
+            }
+        }
     }
 }
