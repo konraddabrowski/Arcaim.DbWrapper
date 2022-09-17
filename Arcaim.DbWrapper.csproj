@@ -3,14 +3,16 @@
   <PropertyGroup>
     <Description>The DbWrapper is the wrapper of dapper library</Description>
     <Authors>Konrad Dąbrowski</Authors>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>preview</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <LangVersion>Latest</LangVersion>
     <AssemblyName>Arcaim.DbWrapper</AssemblyName>
     <Title>Arcaim.DbWrapper</Title>
     <PackageId>Arcaim.DbWrapper</PackageId>
     <Company>IHS</Company>
-    <Version>6.0.1</Version>
+    <Version>7.0.0-preview7</Version>
   </PropertyGroup>
   
   <ItemGroup>

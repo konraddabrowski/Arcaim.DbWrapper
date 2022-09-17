@@ -1,10 +1,9 @@
 using System;
 using System.Data;
 
-namespace Arcaim.DbWrapper
+namespace Arcaim.DbWrapper;
+
+public interface IDbWrapper
 {
-  public interface IDbWrapper
-  {
-    public Func<IDbConnection> DbConnectionFactory { get; init; }
-  }
+  public Func<IDbConnection> DbConnectionFactory { get; init; }
 }
